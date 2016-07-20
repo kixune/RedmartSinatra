@@ -1,3 +1,3 @@
 development:
-    adapter: posgresql
+    adapter: postgresql
     database: fraudmart_development
