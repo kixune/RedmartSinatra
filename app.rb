@@ -1,7 +1,7 @@
 class RedmartSinatraApp < Sinatra::Base
 
   get '/' do
-    erb 'annyeong'
+    erb '<h1>annyeong</h1>'
   end
 
   get '/users' do
