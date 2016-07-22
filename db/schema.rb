@@ -16,11 +16,12 @@ ActiveRecord::Schema.define(version: 20160721044654) do
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",       limit: 30, null: false
+    t.string   "first_name", limit: 30, null: false
+    t.string   "last_name",  limit: 30, null: false
     t.string   "email",      limit: 40, null: false
     t.string   "address",    limit: 50, null: false
     t.string   "password",   limit: 20, null: false
-    t.integer  "cc_number"
+    t.string   "cc_number",  limit: 24
     t.datetime "created_at"
     t.datetime "updated_at"
   end

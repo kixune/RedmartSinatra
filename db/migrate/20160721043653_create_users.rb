@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email, null: false, limit: 40
       t.string :address, null: false, limit: 50
       t.string :password, null: false, limit: 20
-      t.integer :cc_number limit 24
+      t.string :cc_number, limit: 24
 
       t.timestamps
     end
