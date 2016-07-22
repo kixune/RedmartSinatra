@@ -29,7 +29,8 @@ class RedmartSinatraApp < Sinatra::Base
 
   #post user (creating new)
   post '/users' do
-
+    @new_user = User.new(params[:user])
+    @new_user.save ? redirect("/users") : erb :'users/new' 
   end
 
   #put user (update information)
@@ -45,5 +46,5 @@ class RedmartSinatraApp < Sinatra::Base
     @deleted_user = User.find(params[:id])
     @deleted_user.destroy
   end
-  
+
 end
