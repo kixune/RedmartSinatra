@@ -1,13 +1,13 @@
 class RedmartSinatraApp < Sinatra::Base
 
   get '/' do
-    erb '<h1>annyeong</h1>'
+    erb 'annyeong'
   end
 
   #get all users
   get '/users' do
     @users = User.all
-    erb :'users'
+    erb :'/users/index'
   end
 
   #get form view to create new user
@@ -29,22 +29,27 @@ class RedmartSinatraApp < Sinatra::Base
 
   #post user (creating new)
   post '/users' do
+
     @new_user = User.new(params[:user])
-    @new_user.save ? redirect("/users") : erb :'users/new' 
+    @new_user.save ? (redirect("/users")) : (erb :'users/new')
+    # if @new_user.save
+    #    redirect("/users")
+    #  else
+    #    erb :'users/new'
+    # end
   end
 
   #put user (update information)
   put 'users/:id' do
-    @the_user = User.find(params[:id])
-    @the_user.update_attributes(
-      # key: "value"
-    )
+    @update_user = User.find(params[:id])
+    @update_user.update_attributes(params[:user]) ? (redirect("/users"))
+    : (erb :"/users/#{@update_user}")
   end
 
   #destroy user
   delete 'users/:id' do
-    @deleted_user = User.find(params[:id])
-    @deleted_user.destroy
+    @delete_user = User.find(params[:id])
+    @delete_user.destroy ? (redirect("/users")) : (erb :"/users/#{@delete_user}")
   end
 
 end
