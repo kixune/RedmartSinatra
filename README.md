@@ -2,10 +2,9 @@ RedmartSinatra
 ------
 
 
-###### Introduction 
+###### Introduction
 
-MVC x REST 
+MVC x REST
 Collab.
 
-Build pseudo-replica of local online supermarket Redmart. 
-
+Build pseudo-replica of local online supermarket Redmart.

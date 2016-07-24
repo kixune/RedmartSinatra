@@ -1,7 +1,7 @@
 class RedmartSinatraApp < Sinatra::Base
 
   get '/' do
-    erb 'annyeong'
+    erb 'We are your friendly, free and easy grocer!'
   end
 
   #get all users
@@ -11,14 +11,13 @@ class RedmartSinatraApp < Sinatra::Base
   end
 
   #get form view to create new user
-  get '/users/new' do
-    erb :'users/new'
-  end
-
-  #get one specific user
   get '/users/:id' do
-    @user = User.find(params[:id])
-    erb :'users/show'
+    if params[:id] == 'new'
+      erb :'users/new'
+    else
+      @user = User.find(params[:id])
+      erb :'users/show'
+    end
   end
 
   #get form view to edit an existing user
@@ -29,7 +28,7 @@ class RedmartSinatraApp < Sinatra::Base
 
   #post user (creating new)
   post '/users' do
-
+    puts params[:user]
     @new_user = User.new(params[:user])
     @new_user.save ? (redirect("/users")) : (erb :'users/new')
     # if @new_user.save

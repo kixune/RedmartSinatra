@@ -7,33 +7,56 @@ h1 {
 
 h2 {
   font-size: 1.5em;
-  margin: 10px 0;
 }
 
 div {
-  border: 0.5px solid #000;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+
 }
 
-nav {
+ul li {
+  display: inline;
+  padding: 0 10px;
+  border-bottom-right-radius: 25%;
+}
+
+li:first-child {
+  background-color: #03c9a9;
+}
+
+li:nth-child(2) {
+  background-color: #4183d7;
+}
+
+li:nth-child(3) {
+  background-color: #f7ca18;
+}
+
+footer {
+  background-color: pink;
   text-align: center;
   width: 100%;
   word-spacing: 8px;
   margin: 0 auto;
   position: fixed;
-  bottom: 20px;
+  bottom: 0;
 }
 
 a {
+  color: #fff;
   text-decoration: none;
   font-size: 0.8em;
 }
 
+
+
+th, td {
+  text-align: center;
+  padding: 6px;
+}
 /*CLASSES*/
 .top-banner {
   background-image: url("https://lostandtaken.com/wp-content/uploads/edd/2016/02/colorful-watercolor-paint-texture-5-1560x2089.jpg");
   padding: 40px 0 60px 30px;
-  margin-bottom: 50px;
 }
 
 /*IDS*/
